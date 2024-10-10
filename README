@@ -1,4 +1,5 @@
-Welcome to the release branch of Universal82/TCPP!
+# Welcome to the release branch of Universal82/TCPP!
+## Everything is broken right now, don't even worry about it :3
 TCPP is a (Linux only for now) library for creating tcp connections in an intuitive manner.
 We-and by we I mean I-want it to be as easy as using std::cout, so both to challenge myself
 in making more complex programs I have decided that I'm going to need to have some form of
