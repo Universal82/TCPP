@@ -15,8 +15,12 @@ char *handler(char *dataToHandle){
 }
 
 void makeClient(){
-    MissMoss::TCP::Client ClientVal;
-    ClientVal.connectTo((char *)"127.0.0.1",2000,(std::function<char *(char *)>)handler);
+    MissMoss::TCP::Client ClientVal(std::string("127.0.0.1"),2000,(std::function<char *(char*)>)handler);
+    while (1){
+        ClientVal << std::string("test");
+        
+        std::cout << ClientVal.awaitPacket() << std::endl;
+    }
 }
 
 void makeServer(){
@@ -27,4 +31,5 @@ void makeServer(){
 int main(){
     //std::thread ServerThread(&makeServer);
     std::thread ClientThread(&makeClient);
+    ClientThread.join();
 }
